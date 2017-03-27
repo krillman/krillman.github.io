@@ -1,7 +1,89 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Social Data Analysis and Visualization: Assignment 2">
+    <meta name="author" content="Kristian Nielsen">
+
+    <title>Assignment 2</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- D3 reference -->
+    <script type="text/javascript" src="d3/d3.js"></script>
+
+    <!-- Custom JS scripts -->
+    <script type="text/javascript" src="js/2A.js" async></script>
+    <script type="text/javascript" src="js/2B.js" async></script>
+
+    <!-- Custom CSS scripts -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="header clearfix">
+        <h3 class="text-muted">Social Data Analysis and Visualization (02806) 2017</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Assignment 2</h1>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-12">
+          <h2>2A</h2>
+          <h4>One scatter plot and two datasets</h4>
+          <p align="justify">The scatterplot shows the number of prostitution crimes versus vehicle theft crimes for all the police districts of San Francisco. Each point corresponds to a district and its radius is proportional to the total amount of crimes for the chosen period. If one hovers over a point, the name of the district as well as the total crime count is shown. One can toggle between data from 2003 and 2015 by clicking the two buttons below.
+          <p align="justify">The ranges of the axes are stable and based on the two datasets as a whole. The reason for this is for it to be easier to grasp the developemnt and/or differences between the two data sets. If the axes were dynamic, the maximum for both years would visually be placed the same place because the range of the axes would have been changed. </p>
+        <div class="text-center">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default active" id="scatter03">
+                <input class="radio" type="radio" name="options"  autocomplete="off" checked> 2003 
+              </label>
+              <label class="btn btn-default" id="scatter15">
+                <input class="radio" type="radio" name="options" autocomplete="off"> 2015
+              </label>
+            </div>
+            <div id="tooltip" class="hidden">
+            <p><strong>District: <span id ="value_district"></span></strong></p> <p>Total crime count: <span id="value_count"></span></p>
+            </div>
+            <div id="scatterplot"></div>
+          </div>
+          
+          <h2>2B</h2>
+          <h4>Visualizing geodata</h4>
+          <p align="justify">The map visualizes the results of the K-means algorithm with k = 2..6 that has been run on the San Francisco crime data. One can toggle between the results by clicking one of the 5 buttons. By hovering above one of the buttons, a preview of that result will be shown on the map (have a little patience while hovering, it's not super fast). The centroids of each of the results are indicated by black rings. </p>
+          <p align="justify"><a href="https://github.com/krillman/krillman.github.io/blob/master/Data%20preprocessing%20for%20Kmeans%20plotting.ipynb">Here</a> is a link to the IPython Notebook that shows how the data was preprocessed for the visualization.</p>
+          <div class="text-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default kmeans" id="k2" value="2" >k = 2</button>
+              <button type="button" class="btn btn-default kmeans" id="k3" value="3" >k = 3</button>
+              <button type="button" class="btn btn-default kmeans" id="k4" value="4" >k = 4</button>
+              <button type="button" class="btn btn-default kmeans" id="k5" value="5" >k = 5</button>
+              <button type="button" class="btn btn-default kmeans" id="k6" value="6" >k = 6</button>
+            </div>
+            <div id="map"></div>
+          </div>
+
+        </div>
+    </div> <!-- /container -->
+  </body>
 </html>
